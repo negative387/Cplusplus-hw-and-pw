@@ -47,7 +47,7 @@ int main() {
     }
 
     std::cout << "ВМІСТ ФАЙЛУ:   \n";
-    printer->Display(filePath);
+    printer->display(filePath);
 
     delete printer;
     return 0;

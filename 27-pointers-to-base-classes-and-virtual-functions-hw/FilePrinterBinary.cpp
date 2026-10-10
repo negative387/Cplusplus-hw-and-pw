@@ -1,6 +1,6 @@
 #include "FilePrinterBinary.h"
 
-void FilePrinterBinary::Display(const char* path) const {
+void FilePrinterBinary::display(const char* path) const {
     std::ifstream inputFile(path);
 
     if (!inputFile.is_open()) {

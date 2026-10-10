@@ -1,6 +1,6 @@
 #include "FilePrinterASCII.h"
 
-void FilePrinterASCII::Display(const char* path) const {
+void FilePrinterASCII::display(const char* path) const {
     std::ifstream inputFile(path);
 
     if (!inputFile.is_open()) {
@@ -11,7 +11,7 @@ void FilePrinterASCII::Display(const char* path) const {
     std::string line;
     while (std::getline(inputFile, line)) {
         for (char symbol : line) {
-            int asciiCode = static_cast<unsigned char>(symbol);
+            int asciiCode = static_cast<char>(symbol);
             std::cout << asciiCode << ' ';
         }
         std::cout << '\n';

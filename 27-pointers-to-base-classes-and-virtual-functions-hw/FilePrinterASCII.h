@@ -3,5 +3,5 @@
 
 class FilePrinterASCII : public FilePrinter{
 public:
-    void Display (const char *path) const override;
+    void display (const char *path) const override;
 };

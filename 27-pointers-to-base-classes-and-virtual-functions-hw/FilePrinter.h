@@ -5,7 +5,7 @@
 class FilePrinter {
 
 public:
-    virtual void Display (const char *path) const;
+    virtual void display (const char *path) const;
 
     virtual ~FilePrinter();
 };

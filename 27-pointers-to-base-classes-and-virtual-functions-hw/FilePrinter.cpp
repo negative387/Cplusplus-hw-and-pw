@@ -1,6 +1,6 @@
 #include "FilePrinter.h"
 
-void FilePrinter::Display(const char* path) const {
+void FilePrinter::display(const char* path) const {
     std::ifstream inputFile(path);
 
     if (!inputFile.is_open()) {
