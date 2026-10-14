@@ -35,7 +35,7 @@ int main() {
 
     std::cout << "ЗАВДАННЯ 1:\n\n";
 
-    //Створюємо лінійне рівняння 2x - 4 = 0:
+    //Створюєм лінійне рівняння 2x - 4 = 0:
     std::cout << "Створюємо лінійне рівняння 2x - 4 = 0:\n";
     LinearEquation linear(2, -4);
     linear.print();
@@ -47,7 +47,7 @@ int main() {
     }
     std::cout << "\n-------------------------\n";
 
-    //Створюємо квадратне рівняння x^2 - 5x + 6 = 0:
+    //Створюєм квадратне рівняння x^2 - 5x + 6 = 0:
     std::cout << "Створюємо квадратне рівняння x^2 - 5x + 6 = 0:\n";
     QuadraticEquation quadratic(1, -5, 6);
     quadratic.print();
@@ -69,7 +69,7 @@ int main() {
     figuresOriginal.push_back(new Ellipse(3, 2, 12, 6));
 
 
-    //Зберігаємо орігінал у файл:
+    //Зберігаєм орігінал у файл:
     std::cout << "\nЗберігаємо орігінал у файл:\n";
     for (int index = 0; index < figuresOriginal.size(); index++) {
         figuresOriginal[index]->save();
@@ -82,7 +82,7 @@ int main() {
 
     std::vector<Shape*> figuresCopy;
 
-    //Відкриваємо файл щоб дізнатися послідовність фігур:
+    //Відкриваєм файл щоб дізнатися послідовність фігур:
     std::ifstream checkFile("save.txt");
     if (!checkFile.is_open()) {
         std::cout << "ПОМИЛКА! Не вдалося відкрити файл save.txt для розпізнавання фігур!\n";
@@ -91,7 +91,7 @@ int main() {
 
     std::string typeInFile;
 
-    //Завантажуємо орігінал з файлу у копию:
+    //Завантажуєм орігінал з файлу у копию:
     std::cout << "\nЗавантажуємо орігінал з файлу у копию:\n";
     while (checkFile >> typeInFile) {
         Shape* temporaryShape = nullptr;
@@ -123,7 +123,7 @@ int main() {
     }
     checkFile.close();
 
-    //Виводимо фігури з копії:
+    //Виводим фігури з копії:
     std::cout << "\nВиводимо фігури з копії:\n";
     for (int index = 0; index < figuresCopy.size(); index++) {
         std::cout << "\n-------------------------\n";
