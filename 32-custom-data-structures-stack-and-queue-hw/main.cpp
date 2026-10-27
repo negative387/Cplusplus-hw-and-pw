@@ -1,5 +1,5 @@
 #include <iostream>
-#include <stack>
+#include "Stack.h"
 
 /*
 Завдання:
@@ -19,10 +19,12 @@
 
 std::string isCorrectParentheses(const std::string &text) {
 
-    std::stack<char> parentheses;
+    Stack<char> parentheses(text.length());
     std::string checkText = "";
 
     for (const char &symbol : text) {
+
+        checkText += symbol;
 
         if (symbol == ';') {
             break;
@@ -34,8 +36,8 @@ std::string isCorrectParentheses(const std::string &text) {
 
         else if (symbol == ')' || symbol == '}' || symbol == ']') {
 
-            if (parentheses.empty()) {
-                return  "Помилка! (зайва закриваюча скобка): \"" + checkText + "\" -> " + symbol + " <-";
+            if (parentheses.isEmpty()) {
+                return  "Помилка! (зайва закриваюча скобка): \"" + checkText + '\"';
             }
 
             char topParenthesis = parentheses.top();
@@ -44,13 +46,13 @@ std::string isCorrectParentheses(const std::string &text) {
             if ((topParenthesis != '(' && symbol == ')') ||
                 (topParenthesis != '{' && symbol == '}') ||
                 (topParenthesis != '[' && symbol == ']')) {
-                return "Помилка! (неправильний тип скобки): \"" + checkText + "\" -> " + symbol + " <-";
+                return "Помилка! (неправильний тип скобки): \"" + checkText + '\"';
             }
         }
-        checkText += symbol;
+
     }
 
-    if (!parentheses.empty()) {
+    if (!parentheses.isEmpty()) {
         return "Помилка! (не всі скобки закриті): \"" + checkText + '\"';
     }
 
@@ -66,6 +68,5 @@ int main() {
     std::cout << "\nПриклад неправильного рядка:\n"
               << "\"([x-y-z} * [x + 2y) - {z + 4x)]\": "
               << isCorrectParentheses("([x-y-z} * [x + 2y) - {z + 4x)]");
-
     return 0;
 }
